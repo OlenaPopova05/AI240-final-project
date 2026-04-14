@@ -1,0 +1,31 @@
+product_id,product_name,category_id,brand,price,cost,is_active,created_at
+1,Xiaomi Smartphone Plus,1,Xiaomi,15310,9543.87,true,2024-01-04
+2,Tefal Coffee Maker Lite,3,Tefal,8376,4829.62,true,2025-06-03
+3,Anker Bluetooth Speaker Plus,5,Anker,1523,1043.02,true,2025-06-27
+4,Xiaomi Smartphone Max,1,Xiaomi,9276,5361.22,true,2024-11-10
+5,HP Laptop Sleeve Lite,2,HP,20161,11520.26,true,2024-03-11
+6,Anker Bluetooth Speaker Max,5,Anker,4703,2780.8,true,2025-03-09
+7,HP Laptop Plus,2,HP,41148,32868.5,true,2025-03-24
+8,Baseus Mouse Pad Pro,5,Baseus,2040,1154.65,true,2024-08-13
+9,Apple Phone Case Pro,1,Apple,12417,9640.0,true,2024-03-13
+10,Logitech Bluetooth Speaker Max,5,Logitech,1955,1338.8,true,2025-04-29
+11,Asus USB-C Hub Pro,2,Asus,21181,12162.82,true,2025-03-09
+12,Xiaomi Dumbbells Mini,4,Xiaomi,796,517.92,true,2024-04-21
+13,HP Laptop Stand Lite,2,HP,44400,25976.02,true,2025-04-18
+14,Asus Laptop Sleeve Lite,2,Asus,21416,12049.65,true,2024-01-16
+15,Samsung Wireless Charger Max,1,Samsung,39826,26696.95,true,2024-03-01
+16,Lenovo USB-C Hub Max,2,Lenovo,32380,25309.16,true,2024-10-19
+17,Nike Water Bottle Pro,4,Nike,1855,1157.85,true,2024-03-03
+18,Philips Blender Lite,3,Philips,4805,3246.8,true,2024-06-10
+19,Apple Smartphone Pro,1,Apple,12490,8727.5,true,2024-08-28
+20,Fitbit Yoga Mat Lite,4,Fitbit,5170,2894.87,false,2024-09-24
+21,HP Wireless Mouse Plus,2,HP,40938,23855.37,true,2025-04-13
+22,Philips Blender Max,3,Philips,5988,4788.09,true,2024-03-16
+23,Logitech Bluetooth Speaker Pro,5,Logitech,3059,2356.09,true,2025-01-13
+24,Xiaomi Home Kettle Lite,3,Xiaomi Home,6663,4168.57,true,2025-06-25
+25,Xiaomi Smartphone Mini,1,Xiaomi,16800,10350.76,true,2024-06-08
+26,Tefal Air Fryer Plus,3,Tefal,2567,1853.05,true,2025-06-01
+27,Xiaomi Fitness Tracker Mini,4,Xiaomi,5496,3604.79,true,2024-01-04
+28,Bosch Kettle Pro,3,Bosch,6972,4604.72,true,2024-01-10
+29,Samsung Phone Case Lite,1,Samsung,10361,7860.36,true,2024-05-31
+30,Xiaomi Resistance Bands Plus,4,Xiaomi,3287,2546.59,true,2024-02-10

@@ -1,0 +1,522 @@
+[
+  {
+    "review_id": 1,
+    "customer_id": 9,
+    "product_id": 28,
+    "rating": 4,
+    "review_text": "would buy again",
+    "metadata": {
+      "review_created_at": "2025-04-22T17:32:25",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 77
+    }
+  },
+  {
+    "review_id": 2,
+    "customer_id": 4,
+    "product_id": 8,
+    "rating": 5,
+    "review_text": "not bad overall",
+    "metadata": {
+      "review_created_at": "2025-03-30T13:08:59",
+      "source": "mobile_app",
+      "verified_purchase": true,
+      "order_id": 26
+    }
+  },
+  {
+    "review_id": 3,
+    "customer_id": 11,
+    "product_id": 4,
+    "rating": 3,
+    "review_text": "size was a bit smaller than expected",
+    "metadata": {
+      "review_created_at": "2025-05-28T08:57:11",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 59
+    }
+  },
+  {
+    "review_id": 4,
+    "customer_id": 6,
+    "product_id": 9,
+    "rating": 5,
+    "review_text": "not bad overall",
+    "metadata": {
+      "review_created_at": "2025-06-20T09:43:13",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 30
+    }
+  },
+  {
+    "review_id": 5,
+    "customer_id": 8,
+    "product_id": 16,
+    "rating": 4,
+    "review_text": "works as expected",
+    "metadata": {
+      "review_created_at": "2025-02-14T21:10:30",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 48
+    }
+  },
+  {
+    "review_id": 6,
+    "customer_id": 10,
+    "product_id": 25,
+    "rating": 2,
+    "review_text": "not bad overall",
+    "metadata": {
+      "review_created_at": "2025-03-14T09:29:01",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 58
+    }
+  },
+  {
+    "review_id": 7,
+    "customer_id": 4,
+    "product_id": 15,
+    "rating": 5,
+    "review_text": "not bad overall",
+    "metadata": {
+      "review_created_at": "2025-03-21T13:38:51",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 16
+    }
+  },
+  {
+    "review_id": 8,
+    "customer_id": 19,
+    "product_id": 18,
+    "rating": 3,
+    "review_text": "quality is decent",
+    "metadata": {
+      "review_created_at": "2025-03-04T18:49:56",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 21
+    }
+  },
+  {
+    "review_id": 9,
+    "customer_id": 8,
+    "product_id": 13,
+    "rating": 5,
+    "review_text": "excellent quality",
+    "metadata": {
+      "review_created_at": "2025-06-17T19:42:51",
+      "source": "mobile_app",
+      "verified_purchase": true,
+      "order_id": 55
+    }
+  },
+  {
+    "review_id": 10,
+    "customer_id": 8,
+    "product_id": 8,
+    "rating": 3,
+    "review_text": "battery life could be better",
+    "metadata": {
+      "review_created_at": "2025-02-16T09:42:04",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 4
+    }
+  },
+  {
+    "review_id": 11,
+    "customer_id": 17,
+    "product_id": 23,
+    "rating": 4,
+    "review_text": "not bad overall",
+    "metadata": {
+      "review_created_at": "2025-05-12T08:19:54",
+      "source": "mobile_app",
+      "verified_purchase": true,
+      "order_id": 47
+    }
+  },
+  {
+    "review_id": 12,
+    "customer_id": 15,
+    "product_id": 23,
+    "rating": 5,
+    "review_text": "fast delivery and nice packaging",
+    "metadata": {
+      "review_created_at": "2025-04-07T14:13:15",
+      "source": "mobile_app",
+      "verified_purchase": true,
+      "order_id": 10
+    }
+  },
+  {
+    "review_id": 13,
+    "customer_id": 16,
+    "product_id": 3,
+    "rating": 5,
+    "review_text": "quality is decent",
+    "metadata": {
+      "review_created_at": "2025-03-04T10:49:14",
+      "source": "website",
+      "verified_purchase": true,
+      "order_id": 9
+    }
+  },
+  {
+    "review_id": 14,
+    "customer_id": 11,
+    "product_id": 17,
+    "rating": 3,
+    "review_text": "good value for money",
+    "metadata": {
+      "review_created_at": "2025-06-16T17:14:31",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 25
+    }
+  },
+  {
+    "review_id": 15,
+    "customer_id": 5,
+    "product_id": 11,
+    "rating": 2,
+    "review_text": "great product",
+    "metadata": {
+      "review_created_at": "2025-05-13T20:03:00",
+      "source": "mobile_app",
+      "verified_purchase": true,
+      "order_id": 76
+    }
+  },
+  {
+    "review_id": 16,
+    "customer_id": 16,
+    "product_id": 7,
+    "rating": 5,
+    "review_text": "excellent quality",
+    "metadata": {
+      "review_created_at": "2025-03-10T10:48:29",
+      "source": "website",
+      "verified_purchase": true,
+      "order_id": 9
+    }
+  },
+  {
+    "review_id": 17,
+    "customer_id": 11,
+    "product_id": 12,
+    "rating": 3,
+    "review_text": "size was a bit smaller than expected",
+    "metadata": {
+      "review_created_at": "2025-06-14T11:00:48",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 25
+    }
+  },
+  {
+    "review_id": 18,
+    "customer_id": 8,
+    "product_id": 5,
+    "rating": 5,
+    "review_text": "not bad overall",
+    "metadata": {
+      "review_created_at": "2025-02-21T20:18:46",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 4
+    }
+  },
+  {
+    "review_id": 19,
+    "customer_id": 16,
+    "product_id": 16,
+    "rating": 1,
+    "review_text": "size was a bit smaller than expected",
+    "metadata": {
+      "review_created_at": "2025-01-14T13:11:13",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 71
+    }
+  },
+  {
+    "review_id": 20,
+    "customer_id": 8,
+    "product_id": 18,
+    "rating": 5,
+    "review_text": "fast delivery and nice packaging",
+    "metadata": {
+      "review_created_at": "2025-02-11T13:38:01",
+      "source": "mobile_app",
+      "verified_purchase": true,
+      "order_id": 48
+    }
+  },
+  {
+    "review_id": 21,
+    "customer_id": 16,
+    "product_id": 22,
+    "rating": 4,
+    "review_text": "size was a bit smaller than expected",
+    "metadata": {
+      "review_created_at": "2025-05-02T16:01:14",
+      "source": "mobile_app",
+      "verified_purchase": true,
+      "order_id": 54
+    }
+  },
+  {
+    "review_id": 22,
+    "customer_id": 3,
+    "product_id": 12,
+    "rating": 3,
+    "review_text": "battery life could be better",
+    "metadata": {
+      "review_created_at": "2025-03-20T17:36:07",
+      "source": "mobile_app",
+      "verified_purchase": true,
+      "order_id": 13
+    }
+  },
+  {
+    "review_id": 23,
+    "customer_id": 4,
+    "product_id": 14,
+    "rating": 3,
+    "review_text": "size was a bit smaller than expected",
+    "metadata": {
+      "review_created_at": "2025-03-13T10:31:10",
+      "source": "mobile_app",
+      "verified_purchase": true,
+      "order_id": 16
+    }
+  },
+  {
+    "review_id": 24,
+    "customer_id": 16,
+    "product_id": 12,
+    "rating": 4,
+    "review_text": "not bad overall",
+    "metadata": {
+      "review_created_at": "2025-04-29T18:05:42",
+      "source": "website",
+      "verified_purchase": true,
+      "order_id": 54
+    }
+  },
+  {
+    "review_id": 25,
+    "customer_id": 11,
+    "product_id": 14,
+    "rating": 3,
+    "review_text": "good value for money",
+    "metadata": {
+      "review_created_at": "2025-06-23T13:11:21",
+      "source": "website",
+      "verified_purchase": true,
+      "order_id": 25
+    }
+  },
+  {
+    "review_id": 26,
+    "customer_id": 14,
+    "product_id": 18,
+    "rating": 5,
+    "review_text": "battery life could be better",
+    "metadata": {
+      "review_created_at": "2025-01-06T10:40:56",
+      "source": "mobile_app",
+      "verified_purchase": true,
+      "order_id": 22
+    }
+  },
+  {
+    "review_id": 27,
+    "customer_id": 10,
+    "product_id": 11,
+    "rating": 2,
+    "review_text": "fast delivery and nice packaging",
+    "metadata": {
+      "review_created_at": "2025-03-19T16:12:45",
+      "source": "mobile_app",
+      "verified_purchase": true,
+      "order_id": 32
+    }
+  },
+  {
+    "review_id": 28,
+    "customer_id": 8,
+    "product_id": 22,
+    "rating": 4,
+    "review_text": "excellent quality",
+    "metadata": {
+      "review_created_at": "2025-06-25T17:08:19",
+      "source": "mobile_app",
+      "verified_purchase": true,
+      "order_id": 39
+    }
+  },
+  {
+    "review_id": 29,
+    "customer_id": 3,
+    "product_id": 10,
+    "rating": 4,
+    "review_text": "good value for money",
+    "metadata": {
+      "review_created_at": "2025-05-03T14:49:30",
+      "source": "website",
+      "verified_purchase": true,
+      "order_id": 42
+    }
+  },
+  {
+    "review_id": 30,
+    "customer_id": 14,
+    "product_id": 16,
+    "rating": 5,
+    "review_text": "good value for money",
+    "metadata": {
+      "review_created_at": "2025-01-04T21:00:38",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 22
+    }
+  },
+  {
+    "review_id": 31,
+    "customer_id": 5,
+    "product_id": 18,
+    "rating": 3,
+    "review_text": "quality is decent",
+    "metadata": {
+      "review_created_at": "2025-03-09T08:41:50",
+      "source": "mobile_app",
+      "verified_purchase": true,
+      "order_id": 60
+    }
+  },
+  {
+    "review_id": 32,
+    "customer_id": 7,
+    "product_id": 8,
+    "rating": 3,
+    "review_text": "quality is decent",
+    "metadata": {
+      "review_created_at": "2025-05-21T21:48:51",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 35
+    }
+  },
+  {
+    "review_id": 33,
+    "customer_id": 15,
+    "product_id": 16,
+    "rating": 4,
+    "review_text": "great product",
+    "metadata": {
+      "review_created_at": "2025-04-27T09:26:32",
+      "source": "website",
+      "verified_purchase": true,
+      "order_id": 63
+    }
+  },
+  {
+    "review_id": 34,
+    "customer_id": 10,
+    "product_id": 9,
+    "rating": 5,
+    "review_text": "quality is decent",
+    "metadata": {
+      "review_created_at": "2025-03-09T17:59:26",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 58
+    }
+  },
+  {
+    "review_id": 35,
+    "customer_id": 14,
+    "product_id": 8,
+    "rating": 4,
+    "review_text": "good value for money",
+    "metadata": {
+      "review_created_at": "2025-01-13T13:14:41",
+      "source": "website",
+      "verified_purchase": true,
+      "order_id": 22
+    }
+  },
+  {
+    "review_id": 36,
+    "customer_id": 8,
+    "product_id": 27,
+    "rating": 5,
+    "review_text": "fast delivery and nice packaging",
+    "metadata": {
+      "review_created_at": "2025-06-20T15:38:33",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 55
+    }
+  },
+  {
+    "review_id": 37,
+    "customer_id": 5,
+    "product_id": 8,
+    "rating": 4,
+    "review_text": "good value for money",
+    "metadata": {
+      "review_created_at": "2025-07-12T17:05:56",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 61
+    }
+  },
+  {
+    "review_id": 38,
+    "customer_id": 8,
+    "product_id": 17,
+    "rating": 5,
+    "review_text": "battery life could be better",
+    "metadata": {
+      "review_created_at": "2025-02-12T18:28:06",
+      "source": "website",
+      "verified_purchase": true,
+      "order_id": 48
+    }
+  },
+  {
+    "review_id": 39,
+    "customer_id": 16,
+    "product_id": 14,
+    "rating": 5,
+    "review_text": "excellent quality",
+    "metadata": {
+      "review_created_at": "2025-05-10T08:01:42",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 54
+    }
+  },
+  {
+    "review_id": 40,
+    "customer_id": 8,
+    "product_id": 25,
+    "rating": 5,
+    "review_text": "excellent quality",
+    "metadata": {
+      "review_created_at": "2025-03-18T11:24:35",
+      "source": "email_followup",
+      "verified_purchase": true,
+      "order_id": 7
+    }
+  }
+]

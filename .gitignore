@@ -1,0 +1,62 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py,cover
+.python-version
+
+# virtual environments
+venv/
+.venv/
+env/
+
+# =========================
+# dbt
+# =========================
+# compiled artifacts
+dbt/**/target/
+dbt/**/logs/
+dbt/**/dbt_packages/
+
+airflow/**/dbt/**/target/
+airflow/**/dbt/**/logs/
+airflow/**/dbt/**/dbt_packages/
+
+# =========================
+# Airflow
+# =========================
+airflow/logs/
+airflow/airflow.db
+airflow/unittests.cfg
+
+# Astro / Airflow local files
+.airflowignore
+.astro/
+astro.log
+
+# =========================
+# DuckDB
+# =========================
+*.duckdb
+*.duckdb.wal
+
+# =========================
+# OS / IDE
+# =========================
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# JetBrains (DataGrip, PyCharm)
+.idea/
+
+# =========================
+# Docker
+# =========================
+*.log
+*.pid

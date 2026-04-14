@@ -1,0 +1,65 @@
+shipment_id,order_id,shipment_date,delivery_date,shipment_status,carrier,shipping_cost
+1,1,2025-02-24,,in_transit,Ukrposhta,105.18
+2,3,2025-06-09,,in_transit,Ukrposhta,68.33
+3,4,2025-02-12,2025-02-18,returned,Meest Express,169.43
+4,5,2025-04-17,2025-04-18,delivered,Ukrposhta,98.71
+5,7,2025-03-11,2025-03-16,delivered,Nova Poshta,63.72
+6,9,2025-03-01,2025-03-03,delivered,Meest Express,93.19
+7,10,2025-04-01,2025-04-04,delivered,Nova Poshta,207.73
+8,11,2025-03-02,2025-03-03,delivered,Ukrposhta,221.68
+9,12,2025-04-14,2025-04-16,delivered,Meest Express,100.13
+10,13,2025-03-14,2025-03-15,delivered,Meest Express,223.29
+11,14,2025-04-14,,in_transit,Nova Poshta,121.65
+12,16,2025-03-09,2025-03-14,delivered,Ukrposhta,53.16
+13,17,2025-01-12,2025-01-13,delivered,Nova Poshta,198.34
+14,18,2025-04-02,,in_transit,Nova Poshta,199.13
+15,19,2025-04-24,,in_transit,Ukrposhta,205.6
+16,20,2025-02-02,2025-02-07,delivered,Nova Poshta,140.4
+17,21,2025-02-19,2025-02-24,delivered,Nova Poshta,195.45
+18,22,2025-01-04,2025-01-09,delivered,Ukrposhta,141.61
+19,23,2025-06-26,,in_transit,Nova Poshta,249.72
+20,24,2025-04-06,2025-04-10,delivered,Meest Express,71.59
+21,25,2025-06-12,2025-06-16,delivered,Nova Poshta,229.85
+22,26,2025-03-20,2025-03-25,delivered,Nova Poshta,63.14
+23,27,2025-03-27,2025-04-01,delivered,Meest Express,167.07
+24,28,2025-05-25,2025-05-28,delivered,Ukrposhta,248.93
+25,30,2025-06-10,2025-06-13,delivered,Ukrposhta,151.11
+26,32,2025-03-17,2025-03-18,delivered,Meest Express,72.88
+27,33,2025-06-08,,in_transit,Meest Express,225.54
+28,34,2025-04-27,2025-05-03,delivered,Nova Poshta,136.01
+29,35,2025-05-12,2025-05-16,delivered,Ukrposhta,215.48
+30,36,2025-06-20,2025-06-24,delivered,Meest Express,69.02
+31,37,2025-06-21,,in_transit,Ukrposhta,183.02
+32,39,2025-06-24,2025-06-26,delivered,Meest Express,234.6
+33,40,2025-02-08,2025-02-09,delivered,Nova Poshta,68.65
+34,41,2025-05-03,,in_transit,Meest Express,197.76
+35,42,2025-04-28,2025-05-03,delivered,Nova Poshta,167.29
+36,43,2025-02-22,,in_transit,Meest Express,115.93
+37,44,2025-05-08,2025-05-12,delivered,Ukrposhta,224.72
+38,45,2025-06-19,,in_transit,Meest Express,60.29
+39,46,2025-04-21,2025-04-26,delivered,Ukrposhta,120.33
+40,47,2025-05-02,2025-05-07,delivered,Nova Poshta,80.95
+41,48,2025-02-03,2025-02-05,delivered,Nova Poshta,120.02
+42,49,2025-06-23,2025-06-26,delivered,Nova Poshta,202.52
+43,50,2025-06-05,2025-06-07,delivered,Ukrposhta,219.03
+44,54,2025-04-29,2025-05-04,delivered,Meest Express,178.54
+45,55,2025-06-14,2025-06-19,delivered,Meest Express,215.89
+46,56,2025-05-07,,in_transit,Nova Poshta,86.08
+47,57,2025-04-26,2025-04-29,delivered,Ukrposhta,120.2
+48,58,2025-03-03,2025-03-05,delivered,Meest Express,181.47
+49,59,2025-05-20,2025-05-22,delivered,Meest Express,176.63
+50,60,2025-03-02,2025-03-03,delivered,Meest Express,156.1
+51,61,2025-07-02,2025-07-06,delivered,Ukrposhta,118.18
+52,62,2025-04-17,2025-04-20,delivered,Meest Express,114.88
+53,63,2025-04-20,2025-04-25,delivered,Nova Poshta,226.67
+54,65,2025-06-29,2025-07-01,delivered,Meest Express,59.95
+55,66,2025-04-09,2025-04-12,delivered,Ukrposhta,182.39
+56,68,2025-05-20,,in_transit,Meest Express,138.41
+57,70,2025-02-28,2025-03-02,delivered,Meest Express,72.76
+58,71,2025-01-10,2025-01-11,delivered,Ukrposhta,185.64
+59,73,2025-06-12,2025-06-16,delivered,Meest Express,183.43
+60,74,2025-06-02,2025-06-04,delivered,Ukrposhta,246.89
+61,75,2025-01-23,,in_transit,Nova Poshta,90.88
+62,76,2025-04-30,2025-05-02,delivered,Ukrposhta,107.89
+63,77,2025-04-09,2025-04-10,delivered,Ukrposhta,199.4
+64,78,2025-03-26,2025-03-28,delivered,Ukrposhta,156.52
