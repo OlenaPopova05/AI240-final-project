@@ -34,7 +34,8 @@ airflow/unittests.cfg
 
 # Astro / Airflow local files
 .airflowignore
-.astro/
+.astro/*
+!.astro/config.yaml
 astro.log
 
 # =========================
