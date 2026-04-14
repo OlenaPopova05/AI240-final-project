@@ -1,0 +1,369 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: >
+      Fact table at the order level (1 row per order).
+      Combines order data with the latest payment and shipment.
+      Includes customer behavior metrics such as order sequence and previous order date.
+      Used for analyzing order lifecycle, delivery performance, and customer retention.
+
+    columns:
+      - name: order_id
+        description: Unique identifier of the order
+        tests: [not_null, unique]
+
+      - name: customer_id
+        description: Identifier of the customer
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+      - name: order_date
+        description: Date when the order was placed
+        tests: [not_null]
+
+      - name: order_status
+        description: Current status of the order
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['delivered', 'shipped', 'processing', 'cancelled', 'returned']
+
+      - name: payment_id
+        description: Identifier of the latest payment associated with the order
+
+      - name: payment_date
+        description: Date of the latest payment
+
+      - name: payment_method
+        description: Method used for the latest payment
+        tests:
+          - accepted_values:
+              values: ['card', 'apple_pay', 'google_pay', 'cash_on_delivery']
+
+      - name: payment_status
+        description: Status of the latest payment
+        tests:
+          - accepted_values:
+              values: ['paid', 'failed', 'refunded']
+
+      - name: payment_amount
+        description: Amount of the latest payment
+
+      - name: shipment_id
+        description: Identifier of the latest shipment
+
+      - name: shipment_date
+        description: Date of the latest shipment
+
+      - name: delivery_date
+        description: Date when the order was delivered
+
+      - name: shipment_status
+        description: Status of the shipment
+        tests:
+          - accepted_values:
+              values: ['in_transit', 'returned', 'delivered']
+
+      - name: carrier
+        description: Shipping carrier
+
+      - name: shipping_cost
+        description: Cost of shipment
+
+      - name: delivery_days
+        description: Number of days between shipment and delivery
+
+      - name: customer_order_number
+        description: Sequential order number for each customer
+        tests: [not_null]
+
+      - name: previous_order_date
+        description: Previous order date for the same customer
+
+  - name: fct_order_items
+    description: >
+      Fact table at the order item level (1 row per product in an order).
+      Combines order items with orders and product information.
+      Includes cumulative revenue per product to analyze sales trends over time.
+
+    columns:
+      - name: order_item_id
+        description: Unique identifier of the order item
+        tests: [not_null, unique]
+
+      - name: order_id
+        description: Identifier of the order
+        tests:
+          - not_null
+          - relationships:
+              to: ref('fct_orders')
+              field: order_id
+
+      - name: customer_id
+        description: Identifier of the customer
+
+      - name: order_date
+        description: Date when the order was placed
+
+      - name: order_status
+        description: Status of the order
+        tests:
+          - accepted_values:
+              values: ['delivered', 'shipped', 'processing', 'cancelled', 'returned']
+
+      - name: product_id
+        description: Identifier of the product
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_products')
+              field: product_id
+
+      - name: product_name
+        description: Product name
+
+      - name: category_id
+        description: Identifier of the product category
+        tests:
+          - relationships:
+              to: ref('stg_categories')
+              field: category_id
+
+      - name: brand
+        description: Product brand
+
+      - name: is_active
+        description: Whether the product is active
+        tests:
+          - accepted_values:
+              values: [true, false]
+
+      - name: quantity
+        description: Quantity of product in the order
+        tests: [not_null]
+
+      - name: unit_price
+        description: Unit price of the product
+        tests: [not_null]
+
+      - name: discount_amount
+        description: Discount amount applied to the item
+
+      - name: revenue_before_discount
+        description: Revenue before discount
+        tests: [not_null]
+
+      - name: revenue_after_discount
+        description: Revenue after applying discounts
+        tests: [not_null]
+
+      - name: cumulative_product_revenue
+        description: Running total revenue for each product over time
+        tests: [not_null]
+
+  - name: fct_payments
+    description: >
+      Fact table at the payment level (1 row per payment).
+      Combines payment data with order and customer information.
+      Used for analyzing payment methods, payment success rates, and revenue.
+
+    columns:
+      - name: payment_id
+        description: Unique identifier of the payment
+        tests: [not_null, unique]
+
+      - name: order_id
+        description: Identifier of the related order
+        tests:
+          - not_null
+          - relationships:
+              to: ref('fct_orders')
+              field: order_id
+
+      - name: customer_id
+        description: Identifier of the customer
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+      - name: order_date
+        description: Date when the related order was placed
+
+      - name: order_status
+        description: Status of the related order
+        tests:
+          - accepted_values:
+              values: ['delivered', 'shipped', 'processing', 'cancelled', 'returned']
+
+      - name: payment_date
+        description: Date of the payment
+        tests: [not_null]
+
+      - name: payment_method
+        description: Payment method used
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['card', 'apple_pay', 'google_pay', 'cash_on_delivery']
+
+      - name: payment_status
+        description: Status of the payment
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['paid', 'failed', 'refunded']
+
+      - name: payment_amount
+        description: Payment amount
+        tests: [not_null]
+
+  - name: fct_reviews
+    description: >
+      Fact table at the review level (1 row per review).
+      Combines review data with product and customer information.
+      Used for analyzing customer feedback, ratings, and product satisfaction.
+
+    columns:
+      - name: review_id
+        description: Unique identifier of the review
+        tests: [not_null, unique]
+
+      - name: customer_id
+        description: Identifier of the customer
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+      - name: first_name
+        description: Customer first name
+
+      - name: last_name
+        description: Customer last name
+
+      - name: customer_city
+        description: Customer city
+
+      - name: customer_country
+        description: Customer country
+
+      - name: customer_status
+        description: Current customer status
+        tests:
+          - accepted_values:
+              values: ['active', 'inactive', 'blocked']
+
+      - name: product_id
+        description: Identifier of the product
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_products')
+              field: product_id
+
+      - name: product_name
+        description: Product name
+
+      - name: category_id
+        description: Product category identifier
+        tests:
+          - relationships:
+              to: ref('stg_categories')
+              field: category_id
+
+      - name: brand
+        description: Product brand
+
+      - name: is_active
+        description: Whether the product is active
+        tests:
+          - accepted_values:
+              values: [true, false]
+
+      - name: review_date
+        description: Date of the review
+        tests: [not_null]
+
+      - name: rating
+        description: Rating given by the customer
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+
+      - name: review_text
+        description: Text of the review
+
+  - name: fct_shipments
+    description: >
+      Fact table at the shipment level (1 row per shipment).
+      Combines shipment data with order and customer information.
+      Used for analyzing delivery performance, shipping costs, and logistics efficiency.
+
+    columns:
+      - name: shipment_id
+        description: Unique identifier of the shipment
+        tests: [not_null, unique]
+
+      - name: order_id
+        description: Identifier of the order
+        tests:
+          - not_null
+          - relationships:
+              to: ref('fct_orders')
+              field: order_id
+
+      - name: customer_id
+        description: Identifier of the customer
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+      - name: order_date
+        description: Date when the related order was placed
+
+      - name: order_status
+        description: Status of the related order
+        tests:
+          - accepted_values:
+              values: ['delivered', 'shipped', 'processing', 'cancelled', 'returned']
+
+      - name: shipment_date
+        description: Date when the shipment was sent
+        tests: [not_null]
+
+      - name: delivery_date
+        description: Date when the shipment was delivered
+
+      - name: shipment_status
+        description: Status of the shipment
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['in_transit', 'returned', 'delivered']
+
+      - name: carrier
+        description: Delivery carrier
+
+      - name: shipping_cost
+        description: Cost of shipment
+        tests: [not_null]
+
+      - name: delivery_days
+        description: Number of days between shipment and delivery
+
+      - name: shipping_city
+        description: City where the order is delivered
+
+      - name: shipping_country
+        description: Country where the order is delivered
+        

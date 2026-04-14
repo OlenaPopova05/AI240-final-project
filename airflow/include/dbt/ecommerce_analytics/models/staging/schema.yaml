@@ -1,0 +1,279 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: Cleaned and standardized customer data used for downstream analytics.
+    columns:
+      - name: customer_id
+        description: Unique identifier of the customer.
+        tests: [not_null, unique]
+
+      - name: first_name
+        description: Customer first name after trimming whitespace.
+        tests: [not_null]
+
+      - name: last_name
+        description: Customer last name after trimming whitespace.
+        tests: [not_null]
+
+      - name: email
+        description: Lowercased and cleaned customer email address.
+        tests: [not_null]
+
+      - name: phone
+        description: Customer phone number stored as text.
+
+      - name: city
+        description: Customer city.
+
+      - name: country
+        description: Customer country.
+
+      - name: signup_date
+        description: Date when the customer registered.
+
+      - name: customer_status
+        description: Standardized customer status value.
+        tests:
+          - accepted_values:
+              values: ['active', 'inactive', 'blocked']
+
+  - name: stg_categories
+    description: Cleaned product category reference data.
+    columns:
+      - name: category_id
+        description: Unique identifier of the category.
+        tests: [not_null, unique]
+
+      - name: category_name
+        description: Standardized category name.
+        tests: [not_null]
+
+      - name: department_name
+        description: Standardized department name.
+
+  - name: stg_products
+    description: Cleaned and typed product data prepared for analytics models.
+    columns:
+      - name: product_id
+        description: Unique identifier of the product.
+        tests: [not_null, unique]
+
+      - name: product_name
+        description: Standardized product name.
+        tests: [not_null]
+
+      - name: category_id
+        description: Identifier of the category assigned to the product.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_categories')
+              field: category_id
+
+      - name: brand
+        description: Product brand name.
+
+      - name: price
+        description: Selling price of the product.
+        tests: [not_null]
+
+      - name: cost
+        description: Cost of the product.
+        tests: [not_null]
+
+      - name: is_active
+        description: Boolean flag indicating whether the product is active.
+        tests:
+          - accepted_values:
+              values: [true, false]
+
+      - name: created_at
+        description: Date when the product was created in the source data.
+
+  - name: stg_orders
+    description: Cleaned order-level data with standardized statuses and typed date fields.
+    columns:
+      - name: order_id
+        description: Unique identifier of the order.
+        tests: [not_null, unique]
+
+      - name: customer_id
+        description: Identifier of the customer who placed the order.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+      - name: order_date
+        description: Date when the order was placed.
+        tests: [not_null]
+
+      - name: order_status
+        description: Standardized order status.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['delivered', 'shipped', 'processing', 'cancelled', 'returned']
+
+      - name: shipping_city
+        description: City where the order is delivered.
+
+      - name: shipping_country
+        description: Country where the order is delivered.
+
+  - name: stg_order_items
+    description: Cleaned order line data with derived amount and revenue fields.
+    columns:
+      - name: order_item_id
+        description: Unique identifier of the order item.
+        tests: [not_null, unique]
+
+      - name: order_id
+        description: Identifier of the associated order.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
+
+      - name: product_id
+        description: Identifier of the purchased product.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_products')
+              field: product_id
+
+      - name: quantity
+        description: Quantity of the product purchased in the order line.
+        tests: [not_null]
+
+      - name: unit_price
+        description: Selling price per unit of the product.
+        tests: [not_null]
+
+      - name: discount_amount
+        description: Discount amount applied to the order item.
+
+      - name: revenue_before_discount
+        description: Total value of the order item before discount.
+        tests: [not_null]
+
+      - name: revenue_after_discount
+        description: Revenue amount after discount.
+        tests: [not_null]
+
+  - name: stg_payments
+    description: Cleaned payment data with standardized payment methods, statuses, and typed amounts.
+    columns:
+      - name: payment_id
+        description: Unique identifier of the payment.
+        tests: [not_null, unique]
+
+      - name: order_id
+        description: Identifier of the related order.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
+
+      - name: payment_date
+        description: Date when the payment was processed.
+        tests: [not_null]
+
+      - name: payment_method
+        description: Standardized payment method.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['card', 'apple_pay', 'google_pay', 'cash_on_delivery']
+
+      - name: payment_status
+        description: Standardized payment status.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['paid', 'failed', 'refunded']
+
+      - name: payment_amount
+        description: Amount associated with the payment record.
+        tests: [not_null]
+
+  - name: stg_shipments
+    description: Cleaned shipment data enriched with calculated delivery duration.
+    columns:
+      - name: shipment_id
+        description: Unique identifier of the shipment.
+        tests: [not_null, unique]
+
+      - name: order_id
+        description: Identifier of the related order.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
+
+      - name: shipment_date
+        description: Date when the order was shipped.
+        tests: [not_null]
+
+      - name: delivery_date
+        description: Date when the order was delivered, if available.
+
+      - name: shipment_status
+        description: Standardized shipment status.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['in_transit', 'returned', 'delivered']
+
+      - name: carrier
+        description: Name of the delivery carrier.
+
+      - name: shipping_cost
+        description: Cost of shipment.
+        tests: [not_null]
+
+      - name: delivery_days
+        description: Number of days between shipment and delivery.
+
+  - name: stg_reviews
+    description: Cleaned review data with typed review dates and rating values.
+    columns:
+      - name: review_id
+        description: Unique identifier of the review.
+        tests: [not_null, unique]
+
+      - name: customer_id
+        description: Identifier of the customer who submitted the review.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+      - name: product_id
+        description: Identifier of the reviewed product.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_products')
+              field: product_id
+
+      - name: review_date
+        description: Date when the review was submitted.
+        tests: [not_null]
+
+      - name: rating
+        description: Numeric product rating from 1 to 5.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+
+      - name: review_text
+        description: Text content of the customer review.

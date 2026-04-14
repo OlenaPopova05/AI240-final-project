@@ -1,0 +1,175 @@
+version: 2
+
+models:
+  - name: raw_customers
+    description: Raw customer data loaded from seed files without business transformations.
+    columns:
+      - name: customer_id
+        description: Unique identifier of the customer.
+        tests: [not_null, unique]
+
+      - name: email
+        description: Customer email address.
+        tests: [not_null]
+
+      - name: customer_status
+        description: Original customer status value from the source data.
+        tests:
+          - accepted_values:
+              values: ['active', 'inactive', 'blocked']
+
+  - name: raw_categories
+    description: Raw product category data loaded from seed files.
+    columns:
+      - name: category_id
+        description: Unique identifier of the category.
+        tests: [not_null, unique]
+
+      - name: category_name
+        description: Name of the product category.
+        tests: [not_null]
+
+      - name: department_name
+        description: Higher-level department grouping for the category.
+
+  - name: raw_products
+    description: Raw product data loaded from seed files without standardization.
+    columns:
+      - name: product_id
+        description: Unique identifier of the product.
+        tests: [not_null, unique]
+
+      - name: category_id
+        description: Category identifier associated with the product.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('raw_categories')
+              field: category_id
+
+      - name: is_active
+        description: Original active flag from the source data.
+        tests:
+          - accepted_values:
+              values: ['true', 'false']
+
+  - name: raw_orders
+    description: Raw order data loaded from seed files.
+    columns:
+      - name: order_id
+        description: Unique identifier of the order.
+        tests: [not_null, unique]
+
+      - name: customer_id
+        description: Identifier of the customer who placed the order.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('raw_customers')
+              field: customer_id
+
+      - name: order_status
+        description: Original order status from the source system.
+        tests:
+          - accepted_values:
+              values: ['delivered', 'shipped', 'processing', 'cancelled', 'returned']
+
+  - name: raw_order_items
+    description: Raw order item data representing product lines within orders.
+    columns:
+      - name: order_item_id
+        description: Unique identifier of the order item.
+        tests: [not_null, unique]
+
+      - name: order_id
+        description: Associated order identifier.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('raw_orders')
+              field: order_id
+
+      - name: product_id
+        description: Associated product identifier.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('raw_products')
+              field: product_id
+
+  - name: raw_payments
+    description: Raw payment data loaded from seed files.
+    columns:
+      - name: payment_id
+        description: Unique identifier of the payment.
+        tests: [not_null, unique]
+
+      - name: order_id
+        description: Associated order identifier.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('raw_orders')
+              field: order_id
+
+      - name: payment_method
+        description: Original payment method from the source data.
+        tests:
+          - accepted_values:
+              values: ['card', 'apple_pay', 'google_pay', 'cash_on_delivery']
+
+      - name: payment_status
+        description: Original payment status from the source data.
+        tests:
+          - accepted_values:
+              values: ['paid', 'failed', 'refunded']
+
+  - name: raw_shipments
+    description: Raw shipment and delivery data loaded from seed files.
+    columns:
+      - name: shipment_id
+        description: Unique identifier of the shipment.
+        tests: [not_null, unique]
+
+      - name: order_id
+        description: Associated order identifier.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('raw_orders')
+              field: order_id
+
+      - name: shipment_status
+        description: Original shipment status from the source data.
+        tests:
+          - accepted_values:
+              values: ['in_transit', 'returned', 'delivered']
+
+  - name: raw_reviews
+    description: Raw customer review data loaded from seed files.
+    columns:
+      - name: review_id
+        description: Unique identifier of the review.
+        tests: [not_null, unique]
+
+      - name: customer_id
+        description: Identifier of the customer who submitted the review.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('raw_customers')
+              field: customer_id
+
+      - name: product_id
+        description: Identifier of the reviewed product.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('raw_products')
+              field: product_id
+
+      - name: rating
+        description: Rating value from the source data.
+        tests:
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
