@@ -1,1 +1,1 @@
-select * from {{ ref('orders') }}
+select * from {{ source('ecommerce_duckdb', 'raw_orders') }}

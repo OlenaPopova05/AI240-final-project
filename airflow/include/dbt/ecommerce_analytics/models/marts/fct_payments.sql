@@ -1,7 +1,8 @@
 -- mart for payment analysis, combining payments with orders to analyze payment trends and customer behavior
 {{ config(
     materialized='incremental',
-    unique_key='payment_id'
+    unique_key='payment_id',
+    tags=['hourly']
 ) }}
 
 with payments as (

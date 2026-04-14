@@ -2,7 +2,8 @@
 {{ config(
     materialized='incremental',
     unique_key='order_item_id',
-    incremental_strategy='merge'
+    incremental_strategy='merge',
+    tags=['hourly']
 ) }}
 
 with order_items as (
