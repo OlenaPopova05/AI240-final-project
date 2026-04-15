@@ -3,3 +3,5 @@ pandas
 duckdb
 pymysql
 dbt-duckdb
+boto3
+
