@@ -1,5 +1,11 @@
 version: 2
 
+sources:
+  - name: minio
+    schema: main
+    tables:
+      - name: raw_shipments
+
 models:
   - name: raw_customers
     description: Raw customer data loaded from seed files without business transformations.
@@ -125,7 +131,7 @@ models:
               values: ['paid', 'failed', 'refunded']
 
   - name: raw_shipments
-    description: Raw shipment and delivery data loaded from seed files.
+    description: Raw shipment and delivery data loaded from MinIO via Airflow.
     columns:
       - name: shipment_id
         description: Unique identifier of the shipment.

@@ -4,3 +4,5 @@ duckdb
 pymysql
 dbt-duckdb
 apache-airflow-providers-mysql
+boto3
+
