@@ -1,1 +1,1 @@
-select * from {{ ref('payments') }}
+select * from {{ source('ecommerce_duckdb', 'raw_payments') }}

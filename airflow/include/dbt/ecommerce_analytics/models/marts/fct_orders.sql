@@ -5,7 +5,8 @@
     materialized='incremental',
     unique_key='order_id',
     incremental_strategy='merge',
-    incremental_predicates=["DBT_INTERNAL_DEST.order_date >= current_date - interval '30 day'"]
+    incremental_predicates=["DBT_INTERNAL_DEST.order_date >= current_date - interval '30 day'"],
+    tags=['hourly']
 ) }}
 
 with orders as (
