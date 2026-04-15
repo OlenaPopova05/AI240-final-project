@@ -1,3 +1,5 @@
+{{ config(tags=['hourly']) }}
+
 with source as (
 
     select *
@@ -11,7 +13,7 @@ renamed as (
         cast(review_id as bigint) as review_id,
         cast(customer_id as bigint) as customer_id,
         cast(product_id as bigint) as product_id,
-        cast(review_date as date) as review_date,
+        cast(review_created_at as date) as review_date,
         cast(rating as bigint) as rating,
         trim(review_text) as review_text
 

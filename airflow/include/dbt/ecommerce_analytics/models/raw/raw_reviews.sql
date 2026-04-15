@@ -1,1 +1,2 @@
-select * from {{ ref('reviews') }}
+select * from raw_reviews
+

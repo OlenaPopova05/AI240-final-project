@@ -1,1 +1,2 @@
-select * from {{ ref('shipments') }}
+select * from {{ source('minio', 'raw_shipments') }}
+
